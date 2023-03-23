@@ -21,6 +21,8 @@ public class DashboardController {
     @FXML
     void btnManageCustormersOnAction(ActionEvent event) {
         System.out.println("Dasun");
+        System.out.println("Dasun");
+        System.out.println("Dasun");
 
     }
 
