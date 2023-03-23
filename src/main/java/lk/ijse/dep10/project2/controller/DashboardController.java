@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 
+
 public class DashboardController {
 
     @FXML
@@ -25,11 +26,13 @@ public class DashboardController {
     private Button btnManageTeacers;
 
     @FXML
-    void btnManageCustormersOnAction(ActionEvent event) {
-        System.out.println("Dasun");
-        System.out.println("Dasun");
-        System.out.println("Dasun");
-
+    void btnManageCustormersOnAction(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/CustomerView.fxml"))));
+        stage.centerOnScreen();
+        stage.show();
+        stage.setTitle("Manage Customer");
+        //stage.setMaximized(true);
     }
 
     @FXML
