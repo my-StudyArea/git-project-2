@@ -32,6 +32,18 @@ public class AppInitializer extends Application {
             }
         }));
         launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws IOException {
+<<<<<<< HEAD
+=======
+        generateTablesIfNotExist();
+>>>>>>> origin/feat/1/manage-customer
+        primaryStage.setScene(new Scene(new FXMLLoader(getClass().getResource("/view/Dashboard.fxml")).load()));
+        primaryStage.centerOnScreen();
+        primaryStage.show();
+    }
     private void generateTablesIfNotExist() {
         Connection connection = DBConnection.getInstance().getConnection();
         try {
