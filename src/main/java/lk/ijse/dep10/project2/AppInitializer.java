@@ -15,7 +15,7 @@ public class AppInitializer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        primaryStage.setScene(new Scene(new FXMLLoader(getClass().getResource("/view/CustomerView.fxml")).load()));
+        primaryStage.setScene(new Scene(new FXMLLoader(getClass().getResource("/view/Dashboard.fxml")).load()));
         primaryStage.centerOnScreen();
         primaryStage.show();
     }
