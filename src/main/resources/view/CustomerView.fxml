@@ -23,7 +23,7 @@
             <HBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="15.0">
                <children>
                   <Label alignment="CENTER_RIGHT" prefHeight="16.0" prefWidth="77.0" text="Id : " />
-                  <TextField fx:id="txtId" HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="txtId" editable="false" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="49.0">
