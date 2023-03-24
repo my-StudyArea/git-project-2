@@ -58,7 +58,7 @@ public class StudentController {
             Connection connection = DBConnection.getInstance().getConnection();
 
             Statement stm = connection.createStatement();
-            ResultSet rst = stm.executeQuery("SELECT * FROM Customer");
+            ResultSet rst = stm.executeQuery("SELECT * FROM Student");
             ObservableList<Student> studentList = tblCustomer.getItems();
 
             while (rst.next()) {
@@ -80,7 +80,7 @@ public class StudentController {
         try{
             Connection connection = DBConnection.getInstance().getConnection();
             Statement stm = connection.createStatement();
-            String sql = "DELETE FROM Customer WHERE id=%d";
+            String sql = "DELETE FROM Student WHERE id=%d";
             sql = String.format(sql, tblCustomer.getSelectionModel().getSelectedItem().getId());
             stm.executeUpdate(sql);
 
@@ -111,7 +111,7 @@ public class StudentController {
             Student student = new Student(Integer.parseInt(txtId.getText()), txtName.getText(), txtAddress.getText());
 
             Connection connection = DBConnection.getInstance().getConnection();
-            PreparedStatement stm=connection.prepareStatement("INSERT INTO Customer VALUES (?,?, ?)",Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement stm=connection.prepareStatement("INSERT INTO Student VALUES (?,?, ?)",Statement.RETURN_GENERATED_KEYS);
             Student selectedStudent = tblCustomer.getSelectionModel().getSelectedItem();
 
             if (selectedStudent == null) {
@@ -124,7 +124,7 @@ public class StudentController {
                 tblCustomer.getItems().add(student);
             } else {
                 Statement stm1=connection.createStatement();
-                String sql = "UPDATE Customer SET name_customer='%s', address_customer='%s'" + " WHERE id=%d";
+                String sql = "UPDATE Student SET name_customer='%s', address_customer='%s'" + " WHERE id=%d";
                 sql = String.format(sql, student.getName(), student.getAddress(),student.getId());
                 stm1.executeUpdate(sql);
 
