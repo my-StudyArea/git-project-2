@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+
 
 public class DashboardController {
 
@@ -39,7 +41,14 @@ public class DashboardController {
     }
 
     @FXML
-    void btnManageStudentOnAction(ActionEvent event) {
+    void btnManageStudentOnAction(ActionEvent event) throws IOException {
+        URL mainViewUrl = getClass().getResource("/view/Student.fxml");
+        Scene mainViewScene = new Scene(FXMLLoader.load(mainViewUrl));
+        Stage stage = (Stage) btnManageTeacers.getScene().getWindow();
+        stage.setTitle("Student");
+        stage.setScene(mainViewScene);
+        stage.sizeToScene();
+        stage.centerOnScreen();
 
     }
 

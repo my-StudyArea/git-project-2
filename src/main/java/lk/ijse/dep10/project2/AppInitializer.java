@@ -21,6 +21,7 @@ import java.util.Set;
 public class AppInitializer extends Application {
 
     public static void main(String[] args) {
+        launch(args);
         Runtime.getRuntime().addShutdownHook(new Thread(()->{
             try {
                 System.out.println("Database connection is about to close");
@@ -31,7 +32,7 @@ public class AppInitializer extends Application {
                 throw new RuntimeException(e);
             }
         }));
-        launch(args);
+
     }
 
     @Override
