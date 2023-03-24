@@ -112,6 +112,9 @@ public class CustomerViewController {
         txtAddress.clear();
         txtName.requestFocus();
 
+        txtName.getStyleClass().remove("invalid");
+        txtAddress.getStyleClass().remove("invalid");
+
     }
 
     @FXML
@@ -143,17 +146,19 @@ public class CustomerViewController {
     }
     private boolean isValidate() {
         boolean validData = true;
+        txtName.getStyleClass().remove("invalid");
+        txtAddress.getStyleClass().remove("invalid");
 
         if (txtAddress.getText().length() < 3) {
             txtAddress.requestFocus();
             txtAddress.selectAll();
-            //txtAddress.getStyleClass().add("invalid");
+            txtAddress.getStyleClass().add("invalid");
             validData = false;
         }
         if (!txtName.getText().matches("[A-Za-z ]+")) {
             txtName.requestFocus();
             txtName.selectAll();
-            //txtName.getStyleClass().add("invalid");
+            txtName.getStyleClass().add("invalid");
             validData = false;
         }
 

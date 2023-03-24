@@ -42,13 +42,12 @@ public class DashboardController {
 
     @FXML
     void btnManageStudentOnAction(ActionEvent event) throws IOException {
-        URL mainViewUrl = getClass().getResource("/view/Student.fxml");
-        Scene mainViewScene = new Scene(FXMLLoader.load(mainViewUrl));
-        Stage stage = (Stage) btnManageTeacers.getScene().getWindow();
-        stage.setTitle("Student");
-        stage.setScene(mainViewScene);
-        stage.sizeToScene();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Student.fxml"))));
         stage.centerOnScreen();
+        stage.show();
+        stage.setTitle("Manage Customer");
+        //stage.setMaximized(true);
 
     }
 

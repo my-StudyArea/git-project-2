@@ -8,10 +8,6 @@
     <artifactId>team-progect-2</artifactId>
     <version>0.1.0</version>
     <packaging>jar</packaging>
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/feat/1/manage-customer
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -37,9 +33,4 @@
         </dependency>
     </dependencies>
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> origin/feat/1/manage-customer
 </project>

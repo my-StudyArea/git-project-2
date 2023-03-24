@@ -37,7 +37,7 @@ public class AppInitializer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        //generateTablesIfNotExist();
+        generateTablesIfNotExist();
         primaryStage.setScene(new Scene(new FXMLLoader(getClass().getResource("/view/Dashboard.fxml")).load()));
         primaryStage.centerOnScreen();
         primaryStage.show();
@@ -53,7 +53,7 @@ public class AppInitializer extends Application {
                 tableNameSet.add(rst.getString(1));
             }
 
-            boolean tableExists = tableNameSet.containsAll(Set.of("Customer", "Teacher", "Student", "Employee"));
+            boolean tableExists = tableNameSet.containsAll(Set.of("Customer", "Student"));
 
             if (!tableExists) {
                 System.out.println("schema is about to auto generate");
