@@ -21,6 +21,7 @@ import java.util.Set;
 public class AppInitializer extends Application {
 
     public static void main(String[] args) {
+        launch(args);
         Runtime.getRuntime().addShutdownHook(new Thread(()->{
             try {
                 System.out.println("Database connection is about to close");
@@ -31,15 +32,12 @@ public class AppInitializer extends Application {
                 throw new RuntimeException(e);
             }
         }));
-        launch(args);
+
     }
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-<<<<<<< HEAD
-=======
         generateTablesIfNotExist();
->>>>>>> origin/feat/1/manage-customer
         primaryStage.setScene(new Scene(new FXMLLoader(getClass().getResource("/view/Dashboard.fxml")).load()));
         primaryStage.centerOnScreen();
         primaryStage.show();

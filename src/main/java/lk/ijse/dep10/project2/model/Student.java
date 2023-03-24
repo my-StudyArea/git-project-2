@@ -1,15 +1,15 @@
 package lk.ijse.dep10.project2.model;
 
 public class Student {
-    String  id ;
+    int  id ;
     String name;
     String address;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -29,7 +29,7 @@ public class Student {
         this.address = address;
     }
 
-    public Student(String id, String name, String address) {
+    public Student(int id, String name, String address) {
         this.id = id;
         this.name = name;
         this.address = address;
